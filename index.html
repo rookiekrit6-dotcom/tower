@@ -255,14 +255,25 @@ input[type=text],input[type=number],input[type=date],input:not([type]),select,te
 .stk .todo .row .btn::before{display:none!important}
 }
 @media(min-width:900px){body{font-size:17px}.big3 strong{font-size:26px}.big3 div{padding:14px 16px}}
+/* ---------- backgrounds + alignment ---------- */
+body{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cg fill='%238a8a8a' fill-opacity='.075'%3E%3Cg transform='translate%2818 14%29 rotate%28-18 30 30%29'%3E%3Cellipse cx='30' cy='38' rx='11' ry='9'/%3E%3Ccircle cx='15' cy='25' r='5'/%3E%3Ccircle cx='25' cy='17' r='5'/%3E%3Ccircle cx='36' cy='17' r='5'/%3E%3Ccircle cx='46' cy='26' r='5'/%3E%3C/g%3E%3Cg transform='translate%2888 86%29 rotate%2822 30 30%29 scale%28.8%29'%3E%3Cellipse cx='30' cy='38' rx='11' ry='9'/%3E%3Ccircle cx='15' cy='25' r='5'/%3E%3Ccircle cx='25' cy='17' r='5'/%3E%3Ccircle cx='36' cy='17' r='5'/%3E%3Ccircle cx='46' cy='26' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") 0 0/150px 150px repeat,radial-gradient(circle at 12% 0,var(--glow) 0,transparent 38%) fixed;background-color:var(--bg)}
+.tabs{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px)}
+.room{display:flex;flex-direction:column}
+.room .acts2{margin-top:auto;padding-top:8px}
+.room.mini{display:block}
 /* ---------- wide screens: use the full width ---------- */
 @media(min-width:900px){
 .wrap{max-width:1340px;padding:0 24px}
 #view{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px;align-items:start}
 #view>*{grid-column:1/-1;margin-bottom:0}
 #view>article.room,#view>details.room,#view>details.sec{grid-column:auto}
+#view{align-items:stretch}
+#view>details,#view>.note,#view>.todo,#view>.chips,#view>p,#view>.big3,#view>.foot,#view>.empty{align-self:start}
+#view>article.room.mini{grid-column:1/-1}
+#view>details[data-sec=list]{grid-column:1;grid-row:3/span 3}
+.stk .billbox .hint::after{content:'';display:block;width:130px;height:130px;margin:18px auto 0;background:url(cat-work.webp) center/contain no-repeat}
 .billbox{display:grid;grid-template-columns:minmax(0,500px) minmax(0,1fr);gap:12px 28px;align-items:start}
-.billbox>*{grid-column:2;max-width:640px;width:100%}
+.billbox>*{grid-column:2;max-width:none;width:100%}
 .billbox>img{grid-column:1;grid-row:1/span 12;max-width:500px}
 
 }
