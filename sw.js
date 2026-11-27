@@ -1,4 +1,4 @@
-const C='dormbill-v5';
+const C='dormbill-v6';
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(['./','./manifest.json','./qrcode.js','./jsQR.js','./icon-192.png','./cat-hi.webp','./cat-happy.webp','./cat-sleep.webp','./cat-work.webp'])))});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
