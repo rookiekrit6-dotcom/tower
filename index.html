@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>บิลหอพัก - โปรแกรมคิดค่าน้ำค่าไฟหอพัก ฟรี ออกบิลพร้อม QR พร้อมเพย์</title>
 <meta name="description" content="โปรแกรมคิดค่าเช่า ค่าน้ำ ค่าไฟหอพักและห้องเช่า ใช้ฟรี ไม่ต้องสมัครสมาชิก จดมิเตอร์ ออกบิลพร้อม QR พร้อมเพย์ ส่งเข้าไลน์ บันทึกรับเงิน ทำบัญชีรายรับรายจ่าย ข้อมูลเก็บในเครื่องของคุณ">
-<meta name="theme-color" content="#2448d8">
+<meta name="theme-color" content="#1b7f93">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -161,6 +161,47 @@ details.room.sec summary .who{font-weight:400;color:var(--mute);flex:1}
 .qopen{width:100%;margin-bottom:12px;min-height:52px;font-size:17px}
 @media(max-width:420px){.mrow{grid-template-columns:38px minmax(0,1fr) 14px minmax(0,1fr)}.addit{grid-template-columns:minmax(0,1fr) 84px auto}}
 @media(prefers-reduced-motion:reduce){.gauge i,#toast{transition:none}}
+
+/* ---------- pastel chibi theme ---------- */
+:root,:root[data-theme=dark],:root[data-theme=light]{color-scheme:light;--bg:#fff8ef;--panel:#fdf0e1;--card:#ffffff;--ink:#3a2f2a;--mute:#7d6a5c;--line:#f1e0cd;--pri:#1b7f93;--pri-ink:#14677a;--acc:#f08a3c;--el:#d9480f;--wa:#0b72b0;--ok:#1d8a55;--okbg:#1d8a55;--warn:#a35400;--warnbg:#b86a14;--bad:#c2392f;--badbg:#c2392f}
+body{background:var(--bg) radial-gradient(circle at 12% 0,#ffe9d2 0,transparent 38%) fixed}
+.top{background:linear-gradient(135deg,#35a9b9 0,#1b7f93 55%,#176e82 100%);border-radius:0 0 26px 26px;position:relative;overflow:hidden;box-shadow:0 6px 18px rgba(27,127,147,.22)}
+.top::before,.top::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.09);pointer-events:none}
+.top::before{width:190px;height:190px;right:-50px;top:-70px}.top::after{width:120px;height:120px;left:-40px;bottom:-60px}
+.top .wrap{position:relative;z-index:1}
+.stk #dname{padding-left:56px;min-height:48px;line-height:48px;background:url(cat-hi.webp) left center/48px no-repeat}
+.mnav button{border-radius:14px;background:rgba(255,255,255,.2)}
+.sum div{background:rgba(255,255,255,.17);border-radius:14px}
+.gauge i{background:linear-gradient(90deg,#ffd9a8,#fff)}
+.tabs{background:var(--bg);border-bottom:0;padding-top:8px}
+.tabs .wrap{gap:6px}
+.tabs button{display:flex;flex-direction:column;align-items:center;gap:2px;border:0;border-radius:14px;padding:6px 2px;font-size:13px;min-height:54px;color:var(--mute)}
+.tabs button::before{content:'';width:22px;height:22px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+.tabs button[aria-current=true]{background:#dff1f4;color:var(--pri-ink);border:0}
+[data-tab=meter]{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20h4L19 9l-4-4L4 16v4z M14 6l4 4'/%3E%3C/svg%3E")}[data-tab=bill]{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3h12v18l-3-2-3 2-3-2-3 2V3z M9 8h6 M9 12h6'/%3E%3C/svg%3E")}[data-tab=acc]{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20V11 M10 20V5 M16 20v-6 M21 20H3'/%3E%3C/svg%3E")}[data-tab=rooms]{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11l9-7 9 7v9h-6v-6H9v6H3z'/%3E%3C/svg%3E")}[data-tab=set]{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6h8m5 0h3M4 12h2m5 0h9M4 18h10m5 0h1'/%3E%3Ccircle cx='14.5' cy='6' r='2'/%3E%3Ccircle cx='8.5' cy='12' r='2'/%3E%3Ccircle cx='16.5' cy='18' r='2'/%3E%3C/svg%3E")}
+.room,details.sec{background:var(--card);border-color:var(--line);border-radius:18px;box-shadow:0 2px 10px rgba(140,90,40,.07)}
+.room[data-st=paid]{border-color:#bfe3cf;background:#f6fcf8}
+.note,.todo{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 2px 10px rgba(140,90,40,.07)}
+.note.bad{background:#fdeceb;border-color:#f6cfcb}
+.calc,.big3 div,.seg,.chipit,.lockbar{background:var(--panel)}
+input[type=text],input[type=number],input[type=date],input:not([type]),select,textarea{background:#fffaf4;border-color:var(--line);border-radius:12px}
+.btn{border-radius:14px;border-color:var(--line);background:#fff;box-shadow:0 1px 0 rgba(140,90,40,.08)}
+.btn.pri{background:var(--pri);border-color:var(--pri);box-shadow:0 3px 0 #14677a}
+.btn.ok{box-shadow:0 3px 0 #156b41}
+.btn.pri:active,.btn.ok:active{transform:translateY(2px);box-shadow:none}
+.chips button{background:#fff;border-color:var(--line)}
+.chips button[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+.st.wait{background:#f3e7da;color:#6b5a4d}
+.ov{background:rgba(58,47,42,.45)}.ov .box{border-radius:22px;background:var(--bg)}
+#toast{background:#3a2f2a;color:#fff;border-radius:14px}
+.linkbtn{color:var(--pri-ink)}
+.btn[data-pay]::before,.btn[data-bill]::before,#bshare::before,#smShare::before,#qOpen::before,#smOpen::before,#odOpen::before,#addRoom::before,#bcopy::before,#smCopy::before,#exAdd::before{content:'';display:inline-block;width:18px;height:18px;margin-right:6px;vertical-align:-3px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+.btn[data-pay]{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v10 M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1 1.7 3 2 3 .8 3 2-1.300 2-3 2c-1.400 0-2.500-.5-3-1.500'/%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3C/svg%3E")}.btn[data-bill]{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3h12v18l-3-2-3 2-3-2-3 2V3z M9 8h6 M9 12h6'/%3E%3C/svg%3E")}#bshare,#smShare,#smOpen{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 3L10 14 M21 3l-7 18-4-7-7-4 18-7z'/%3E%3C/svg%3E")}#qOpen{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20h4L19 9l-4-4L4 16v4z M14 6l4 4'/%3E%3C/svg%3E")}#odOpen{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 16V11a6 6 0 1112 0v5l2 2H4l2-2z M10 21h4'/%3E%3C/svg%3E")}#addRoom,#exAdd{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14 M5 12h14'/%3E%3C/svg%3E")}#bcopy,#smCopy{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 9h11v11H9z M5 15H4V4h11v1'/%3E%3C/svg%3E")}
+.stk .todo .done{background:url(cat-happy.webp) right center/60px no-repeat;min-height:60px;display:flex;align-items:center;padding-right:66px}
+.stk .empty::before{content:'';display:block;width:120px;height:120px;margin:0 auto 6px;background:url(cat-sleep.webp) center/contain no-repeat}
+.stk #qe .box{background-image:url(cat-work.webp);background-repeat:no-repeat;background-position:right 16px top 46px;background-size:70px}
+.priv{color:var(--mute)}
+@media(prefers-reduced-motion:reduce){.btn.pri:active,.btn.ok:active{transform:none}}
 </style>
 </head>
 <body>
@@ -418,6 +459,8 @@ function setupSteps(){
 function vMeter(){
   let h='';
   if(S.sample)h+=`<div class="note"><span>ตอนนี้เป็นข้อมูลตัวอย่าง ลองกรอกเลขมิเตอร์หรือกดรับเงินดูได้เลย พร้อมใช้จริงเมื่อไรค่อยกดล้าง</span><button class="btn pri" id="startReal">เริ่มใช้ของจริง</button></div>`;
+  const ios=/iPhone|iPad|iPod/.test(navigator.userAgent)&&!navigator.standalone&&window.top===window.self;
+  if(ios&&!S.sample)h+=`<div class="note"><span>ใช้บน iPhone: กดปุ่มแชร์ของ Safari แล้วเลือก "เพิ่มไปยังหน้าจอโฮม" เพื่อใช้เป็นแอปและกันข้อมูลถูกลบเมื่อไม่ได้เปิดนาน</span></div>`;
   const steps=setupSteps(),hasData=Object.keys(S.months).some(k=>Object.keys(S.months[k]).length>1);
   if(!S.sample&&hasData){const days=S.lastBackup?Math.floor((Date.now()-S.lastBackup)/864e5):null;
     if(days===null||days>=30)h+=`<div class="note bad"><span>${days===null?'ยังไม่เคยสำรองข้อมูล':`ไม่ได้สำรองข้อมูลมา ${days} วัน`} ข้อมูลทั้งหมดอยู่ในเครื่องนี้เครื่องเดียว ถ้ามือถือหายหรือล้างเบราว์เซอร์ ข้อมูลจะหายหมด</span><button class="btn pri" id="bkNow">สำรองตอนนี้</button></div>`}
@@ -544,7 +587,7 @@ async function drawDoc(room,k,type){
   const H=190+70+rows.length*90+140+(qrOn?400:110)+(noteLines.length?30+noteLines.length*30:10)+70;
   cv.width=W;cv.height=H;
   x.fillStyle='#fff';x.fillRect(0,0,W,H);
-  x.fillStyle=type==='inv'?'#2448d8':'#18814a';x.fillRect(0,0,W,190);
+  x.fillStyle=type==='inv'?'#1b7f93':'#1d8a55';x.fillRect(0,0,W,190);
   x.fillStyle='#fff';x.textAlign='left';
   x.font=F(700,32);x.fillText(fit(s.name||'หอพัก',370),P,64);
   x.font=F(600,26);x.fillText(type==='inv'?'ใบแจ้งหนี้':'ใบเสร็จรับเงิน',P,108);
@@ -561,8 +604,8 @@ async function drawDoc(room,k,type){
     if(d){x.fillStyle='#5b6378';x.font=F(400,20);x.fillText(fit(d,W-P*2),P,y+62)}
     x.textAlign='right';x.fillStyle=a<0?'#18814a':'#141a2c';x.font=F(600,26);x.fillText((a<0?'−':'')+baht(Math.abs(a))+' บาท',W-P,y+30,W*0.36);
     x.fillStyle='#e6e9f1';x.fillRect(P,y+80,W-P*2,2);y+=90;});
-  y+=16;x.fillStyle=type==='inv'?'#e8edff':'#e3f5ea';x.beginPath();x.roundRect(P,y,W-P*2,108,18);x.fill();
-  x.fillStyle=type==='inv'?'#1d3bb3':'#12663a';x.textAlign='left';x.font=F(600,26);x.fillText(boxL,P+24,y+66);
+  y+=16;x.fillStyle=type==='inv'?'#e1f2f5':'#e3f5ea';x.beginPath();x.roundRect(P,y,W-P*2,108,18);x.fill();
+  x.fillStyle=type==='inv'?'#14677a':'#12663a';x.textAlign='left';x.font=F(600,26);x.fillText(boxL,P+24,y+66);
   x.textAlign='right';x.font=F(700,46);x.fillText(baht(boxA)+' บาท',W-P-24,y+72,W*0.5);
   y+=140;
   if(qrOn){
@@ -1024,6 +1067,8 @@ V.addEventListener('click',async e=>{
   if(t.id==='wipe')ask('ล้างข้อมูลทั้งหมดในเครื่องนี้? ย้อนกลับไม่ได้ ควรสำรองข้อมูลก่อน',()=>{S=blank();issCache=null;save();render()},{yes:'ล้างทั้งหมด',cls:'danger'});
 });
 normalize();if(tooFar(S.cur))S.cur=nowK();save();render();
+try{const im=new Image();im.onload=()=>document.documentElement.classList.add('stk');im.src='cat-hi.webp'}catch(e){}
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist().catch(()=>{})}catch(e){}
 try{if(window.top===window.self&&'serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}
 }
 </script>
