@@ -211,15 +211,14 @@ input[type=text],input[type=number],input[type=date],input:not([type]),select,te
 .stk .btn[data-pay]{--s:url(ic-coin.webp)}.stk .btn[data-bill]{--s:url(ic-receipt.webp)}.stk #bshare,.stk #smShare,.stk #smOpen{--s:url(ic-send.webp)}.stk #qOpen{--s:url(ic-pencil.webp)}.stk #odOpen{--s:url(ic-bell.webp)}.stk #bcopy,.stk #smCopy{--s:url(ic-copy.webp)}
 /* ---------- wide screens: use the full width ---------- */
 @media(min-width:900px){
-.wrap{max-width:none;padding:0 max(2.5vw,24px)}
+.wrap{max-width:1340px;padding:0 24px}
 #view{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px;align-items:start}
 #view>*{grid-column:1/-1;margin-bottom:0}
 #view>article.room,#view>details.room,#view>details.sec{grid-column:auto}
 .billbox{display:grid;grid-template-columns:minmax(0,500px) minmax(0,1fr);gap:12px 28px;align-items:start}
 .billbox>*{grid-column:2;max-width:640px;width:100%}
 .billbox>img{grid-column:1;grid-row:1/span 12;max-width:500px}
-.big3{max-width:900px}
-.sum{max-width:900px}.gauge,.gtxt{max-width:900px}
+
 }
 
 </style>
