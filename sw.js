@@ -1,5 +1,5 @@
-const C='dormbill-v10';
-self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(['./','./manifest.json','./qrcode.js','./jsQR.js','./icon-192.png','./cat-hi.webp','./cat-happy.webp','./cat-sleep.webp','./cat-work.webp','./ic-pencil.webp','./ic-receipt.webp','./ic-chart.webp','./ic-home.webp','./ic-gear.webp','./ic-coin.webp','./ic-send.webp','./ic-bell.webp','./ic-copy.webp'])))});
+const C='dormbill-v11';
+self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(['./','./manifest.json','./qrcode.js','./jsQR.js','./icon-192.png','./cat-hi.webp','./cat-happy.webp','./cat-sleep.webp','./cat-work.webp','./ic-pencil.webp','./ic-receipt.webp','./ic-chart.webp','./ic-home.webp','./ic-gear.webp','./ic-coin.webp','./ic-send.webp','./ic-bell.webp','./ic-copy.webp','./ic-bolt.webp','./ic-drop.webp','./ic-check.webp','./ic-plus.webp','./ic-lock.webp','./ic-warn.webp','./ic-wallet.webp','./ic-find.webp','./ic-box.webp'])))});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
   if(e.request.method!=='GET')return;

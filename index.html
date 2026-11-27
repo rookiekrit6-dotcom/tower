@@ -209,6 +209,52 @@ input[type=text],input[type=number],input[type=date],input:not([type]),select,te
 .stk [data-tab=meter]{--s:url(ic-pencil.webp)}.stk [data-tab=bill]{--s:url(ic-receipt.webp)}.stk [data-tab=acc]{--s:url(ic-chart.webp)}.stk [data-tab=rooms]{--s:url(ic-home.webp)}.stk [data-tab=set]{--s:url(ic-gear.webp)}
 .stk .btn[data-pay]::before,.stk .btn[data-bill]::before,.stk #bshare::before,.stk #smShare::before,.stk #qOpen::before,.stk #smOpen::before,.stk #odOpen::before,.stk #bcopy::before,.stk #smCopy::before{width:26px;height:26px;margin:-4px 6px -4px -2px;vertical-align:-7px;background:var(--s) center/contain no-repeat;-webkit-mask:none;mask:none}
 .stk .btn[data-pay]{--s:url(ic-coin.webp)}.stk .btn[data-bill]{--s:url(ic-receipt.webp)}.stk #bshare,.stk #smShare,.stk #smOpen{--s:url(ic-send.webp)}.stk #qOpen{--s:url(ic-pencil.webp)}.stk #odOpen{--s:url(ic-bell.webp)}.stk #bcopy,.stk #smCopy{--s:url(ic-copy.webp)}
+/* ---------- polish: sticker icons everywhere, easier scanning ---------- */
+.stk .mrow{grid-template-columns:62px minmax(0,1fr) 18px minmax(0,1fr)}
+.stk .mrow>label{display:flex;align-items:center;gap:4px}
+.stk .mrow>label::before{content:'';width:26px;height:26px;flex:none;background:var(--s) center/contain no-repeat}
+.stk .mrow.el{--s:url(ic-bolt.webp)}.stk .mrow.wa{--s:url(ic-drop.webp)}
+.stk .st.paid::before{content:'';display:inline-block;width:16px;height:16px;margin:-2px 3px -3px -4px;background:url(ic-check.webp) center/contain no-repeat}
+.stk .todo .done{font-size:17px}
+.stk #addRoom::before,.stk #exAdd::before{width:26px;height:26px;margin:-4px 6px -4px -2px;vertical-align:-7px;background:url(ic-plus.webp) center/contain no-repeat;-webkit-mask:none;mask:none}
+.stk .lockline::before{content:'';width:20px;height:20px;flex:none;margin-right:2px;background:url(ic-lock.webp) center/contain no-repeat}
+.stk .note.bad::before{content:'';width:34px;height:34px;flex:none;background:url(ic-warn.webp) center/contain no-repeat}
+.stk details.sec>summary::before{content:'';width:30px;height:30px;flex:none;background:var(--s,none) center/contain no-repeat}
+.stk details.room.sec>summary{--s:url(ic-home.webp)}
+.stk details.sec[data-sec=info]>summary{--s:url(ic-home.webp)}
+.stk details.sec[data-sec=rate]>summary{--s:url(ic-bolt.webp)}
+.stk details.sec[data-sec=billset]>summary{--s:url(ic-receipt.webp)}
+.stk details.sec[data-sec=backup]>summary{--s:url(ic-box.webp)}
+.stk details.sec[data-sec=csv]>summary{--s:url(ic-chart.webp)}
+.stk details.sec[data-sec=log]>summary{--s:url(ic-find.webp)}
+.stk details.sec[data-sec=pays]>summary{--s:url(ic-coin.webp)}
+.stk details.sec[data-sec=all]>summary{--s:url(ic-send.webp)}
+.stk details.sec[data-sec=verify]>summary{--s:url(ic-find.webp)}
+.stk details.sec[data-sec=inc]>summary{--s:url(ic-coin.webp)}
+.stk details.sec[data-sec=util]>summary{--s:url(ic-bolt.webp)}
+.stk details.sec[data-sec=expadd]>summary{--s:url(ic-wallet.webp)}
+.stk details.sec[data-sec=list]>summary{--s:url(ic-receipt.webp)}
+.stk details.sec[data-sec=year]>summary{--s:url(ic-chart.webp)}
+.stk #pTitle::before,.stk #dTitle:empty::before{content:'';display:inline-block;width:30px;height:30px;margin:-4px 8px -7px 0;background:url(ic-coin.webp) center/contain no-repeat}
+.todo .row{border-radius:14px}
+.field>span{font-size:14px}
+.room header b{font-size:20px}
+.subl{row-gap:4px}
+@media(min-width:600px){
+.stk .sum div{padding-left:58px;background:var(--s) 12px center/36px no-repeat,rgba(255,255,255,.17)}
+.stk .sum div:nth-child(1){--s:url(ic-receipt.webp)}.stk .sum div:nth-child(2){--s:url(ic-coin.webp)}.stk .sum div:nth-child(3){--s:url(ic-bell.webp)}
+.todo{display:flex;flex-wrap:wrap;gap:10px}
+.todo>b{flex:1 0 100%;margin:0}
+.todo .done{flex:1 0 100%}
+.todo .row{flex:1 1 200px}
+.todo .row{flex-direction:column;align-items:stretch;text-align:center;background:var(--panel);padding:14px 12px 12px;gap:10px}
+.todo .row span{flex:none;font-weight:600}
+.stk .todo .row::before{content:'';width:54px;height:54px;margin:0 auto;background:var(--s) center/contain no-repeat}
+.stk .todo .row:has(#qOpen){--s:url(ic-pencil.webp)}.stk .todo .row:has(#smOpen){--s:url(ic-send.webp)}.stk .todo .row:has(#odOpen){--s:url(ic-bell.webp)}
+.todo .row .btn{width:100%;min-height:44px}
+.stk .todo .row .btn::before{display:none!important}
+}
+@media(min-width:900px){body{font-size:17px}.big3 strong{font-size:26px}.big3 div{padding:14px 16px}}
 /* ---------- wide screens: use the full width ---------- */
 @media(min-width:900px){
 .wrap{max-width:1340px;padding:0 24px}
