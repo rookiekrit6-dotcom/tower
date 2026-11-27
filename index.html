@@ -289,7 +289,7 @@ const pickR=s=>Object.fromEntries(RK.map(k=>[k,s[k]]));
 const RLBL={eRate:'ค่าไฟต่อหน่วย',eMin:'ค่าไฟขั้นต่ำ',wMode:'วิธีคิดค่าน้ำ',wRate:'ค่าน้ำต่อหน่วย',wMin:'ค่าน้ำขั้นต่ำ',wFlat:'ค่าน้ำเหมาจ่าย',name:'ชื่อหอ',pp:'พร้อมเพย์',note:'หมายเหตุท้ายบิล',dueDay:'วันกำหนดชำระ'};
 const KLBL={eOld:'ไฟ เลขเดิม',eNew:'ไฟ เลขใหม่',wOld:'น้ำ เลขเดิม',wNew:'น้ำ เลขใหม่'};
 const INTERNAL=['ตัดยอดตอนเปลี่ยนผู้เช่า','คืนเงินส่วนเกิน','หักเงินประกัน','ย้ายเป็นลูกหนี้'];
-const ppKind=p=>{const d=String(p||'').replace(/\D/g,'');if(/^0\d{9}$/.test(d))return'phone';if(/^\d{13}$/.test(d))return'id';if(/^\d{15}$/.test(d))return'wallet';return d?'bad':'none'};
+const ppKind=p=>{const d=String(p||'').replace(/\D/g,'');if(/^0\d{9}$/.test(d))return'phone';if(/^\d{15}$/.test(d))return'wallet';return d?'bad':'none'};
 const ppOk=p=>['phone','id','wallet'].includes(ppKind(p));
 
 /* ---------- state + migration ---------- */
@@ -763,7 +763,7 @@ ${r.tenant?`<label class="field"><span>ชื่อผู้เช่า (แก
 function vSet(){
   const s=S.set,f=(k,l,t='',err='')=>`<label class="field"><span>${l}</span><input data-s="${k}" ${t} value="${esc(s[k])}">${err?`<em>${err}</em>`:''}</label>`;
   const pk=ppKind(s.pp),ri=rateIssues(s),sec=(id,title,body,def)=>`<details class="sec" data-sec="${id}"${secOpen(id,def)}><summary>${title}</summary><div class="in">${body}</div></details>`;
-  return sec('info','ข้อมูลหอและพร้อมเพย์',f('name','ชื่อหอพัก')+f('pp','เบอร์พร้อมเพย์ (10 หลัก) หรือเลขบัตรประชาชน (13 หลัก)','inputmode="numeric"',pk==='bad'?'รูปแบบไม่ถูกต้อง บิลจะไม่มี QR':pk==='none'?'ยังไม่ได้ใส่ บิลจะไม่มี QR':''),true)+
+  return sec('info','ข้อมูลหอและพร้อมเพย์',f('name','ชื่อหอพัก')+f('pp','เบอร์พร้อมเพย์ (เบอร์มือถือ 10 หลัก)','inputmode="numeric"',pk==='bad'?'ใส่เบอร์มือถือ 10 หลักที่ผูกพร้อมเพย์ บิลจะไม่มี QR จนกว่าจะแก้':pk==='none'?'ยังไม่ได้ใส่ บิลจะไม่มี QR':''),true)+
   sec('rate','ราคาค่าน้ำค่าไฟ',`${ri.length?`<div class="note bad"><span>${esc(ri.join(' · '))}</span></div>`:''}
 <div class="row2">${f('eRate','ค่าไฟ บาท/หน่วย','inputmode="decimal"')}${f('eMin','ค่าไฟขั้นต่ำ (0 = ไม่มี)','inputmode="decimal"')}</div>
 <label class="field"><span>ค่าน้ำคิดแบบ</span><select data-s="wMode"><option value="unit"${s.wMode==='unit'?' selected':''}>ตามมิเตอร์</option><option value="flat"${s.wMode==='flat'?' selected':''}>เหมาจ่ายรายเดือน</option></select></label>
