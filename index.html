@@ -203,6 +203,12 @@ input[type=text],input[type=number],input[type=date],input:not([type]),select,te
 .stk #qe .box{background-image:url(cat-work.webp);background-repeat:no-repeat;background-position:right 16px top 46px;background-size:70px}
 .priv{color:var(--mute)}
 @media(prefers-reduced-motion:reduce){.btn.pri:active,.btn.ok:active{transform:none}}
+/* ---------- sticker icons ---------- */
+.stk .tabs button{min-height:68px;font-size:13px;gap:1px}
+.stk .tabs button::before{width:36px;height:36px;background:var(--s) center/contain no-repeat;-webkit-mask:none;mask:none}
+.stk [data-tab=meter]{--s:url(ic-pencil.webp)}.stk [data-tab=bill]{--s:url(ic-receipt.webp)}.stk [data-tab=acc]{--s:url(ic-chart.webp)}.stk [data-tab=rooms]{--s:url(ic-home.webp)}.stk [data-tab=set]{--s:url(ic-gear.webp)}
+.stk .btn[data-pay]::before,.stk .btn[data-bill]::before,.stk #bshare::before,.stk #smShare::before,.stk #qOpen::before,.stk #smOpen::before,.stk #odOpen::before,.stk #bcopy::before,.stk #smCopy::before{width:26px;height:26px;margin:-4px 6px -4px -2px;vertical-align:-7px;background:var(--s) center/contain no-repeat;-webkit-mask:none;mask:none}
+.stk .btn[data-pay]{--s:url(ic-coin.webp)}.stk .btn[data-bill]{--s:url(ic-receipt.webp)}.stk #bshare,.stk #smShare,.stk #smOpen{--s:url(ic-send.webp)}.stk #qOpen{--s:url(ic-pencil.webp)}.stk #odOpen{--s:url(ic-bell.webp)}.stk #bcopy,.stk #smCopy{--s:url(ic-copy.webp)}
 /* ---------- wide screens: use the full width ---------- */
 @media(min-width:900px){
 .wrap{max-width:none;padding:0 max(2.5vw,24px)}
